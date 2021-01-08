@@ -1,0 +1,91 @@
+PROCEDURE dot_product(var v1,v2 :  ARRAY_OF INTEGER;)
+VAR
+    i,ps : INTEGER ;
+BEGIN
+    FOR i FROM 0 TO v1.length-1  DO
+       
+           ps+= v1[i]*v2[i];
+        
+    END_FOR
+
+   IF (ps=0) THEN
+      write("Orthogonal")
+   ELSE
+        write("Not orthogonal")
+   END_IF
+END
+
+
+
+
+
+//Algo with a procedure
+
+ALGORITHM procedural_programming
+VAR
+    n:INTEGER;
+    v1,v2 : ARRAY_OF INTEGER;
+BEGIN
+   write ("Give the n");
+   read(n);
+
+   REPEAT
+        write ("Give the first vector");
+        read(v1[]);
+        write ("Give the second vector");
+        read(v2[]);
+dot_product(v1,v2);
+n:=n-2;
+
+   UNTIL (n=0);
+END
+
+
+
+
+
+
+
+FUNCTION dot_product(v1,v2 :  ARRAY_OF INTEGER) : BOOLEAN
+
+VAR
+    i,ps : INTEGER ;
+BEGIN
+    FOR i FROM 0 TO v1.length-1  DO
+       
+           ps+= v1[i]*v2[i];
+        
+    END_FOR
+
+   IF (ps=0) THEN
+      RETURN true
+   ELSE
+         RETURN false
+   END_IF
+END
+
+
+//Algo with a function
+
+ALGORITHM procedural_programming
+VAR
+    n:INTEGER;
+    v1,v2 : ARRAY_OF INTEGER;
+BEGIN
+   write ("Give the n");
+   read(n);
+
+   REPEAT
+        write ("Give the first vector");
+        read(v1[]);
+        write ("Give the second vector");
+        read(v2[]);
+IF ( dot_product(v1,v2)) THEN
+    write("Orthogonal")
+ELSE
+   write("Not orthogonal")
+END_IF
+n:=n-2;
+
+   UNTIL (n=0);
+END
